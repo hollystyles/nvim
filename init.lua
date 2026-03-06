@@ -4,6 +4,8 @@ require("config.lazy")
 vim.o.number = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.o.splitbelow = true
+vim.o.clipboard = "unnamedplus"
 
 -- Map CTRL+S to save edits for normal and insert modes
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>a', { noremap = true })

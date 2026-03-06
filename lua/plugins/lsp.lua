@@ -31,16 +31,21 @@ return {
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 			})
 
-			require("mason").setup()
+			require("mason").setup({
+				registries = {
+					"github:mason-org/mason-registry",
+					"github:Crashdummyy/mason-registry",
+				},
+			})
 			require('mason-lspconfig').setup({
 				handlers = {
 					function(server_name)
       					require('lspconfig')[server_name].setup({})
     				end,
   				},
-			})	
+			})
 		end,
-	},	
+	},
 	{"hrsh7th/nvim-cmp",
 		dependencies = {"hrsh7th/cmp-nvim-lsp"},
 		opts = function(_, opts) 
