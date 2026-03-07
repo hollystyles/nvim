@@ -1,18 +1,16 @@
 return {
 	{"mfussenegger/nvim-dap",
 		config = function()
-			local dap = require "dap"
-
-			vim.api.nvim_set_keymap('n', '<F5>', dap.continue(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<S-F5>', dap.terminate(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<F10>', dap.step_over(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<F11>', dap.step_into(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<S-F11>', dap.step_out(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<F9>', dap.toggle_breakpoint(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<Leader>cb', dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<Leader>bc', dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<Leader>ro', dap.repl.open(), { noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<Leader>rl', dap.run_last(), { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require'dap'.continue()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<S-F5>', "<cmd>lua require'dap'.terminate()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<F10>', "<cmd>lua require'dap'.step_over()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<F11>', "<cmd>lua require'dap'.step_into()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<S-F11>', "<cmd>lua require'dap'.step_out()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<F9>', "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<Leader>cb', "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<Leader>bc', "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<Leader>ro', "<cmd>lua require'dap'.repl.open()<cr>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap('n', '<Leader>rl', "<cmd>lua require'dap'.run_last()<cr>", { noremap = true, silent = true })
 		end,
 	},
 	{"rcarriga/nvim-dap-ui",
