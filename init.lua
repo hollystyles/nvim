@@ -1,4 +1,5 @@
 require("config.lazy")
+-- vim.opts.rocks.enabled = false
 
 -- Editor preferences
 vim.o.number = true
@@ -15,6 +16,8 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.opt.termguicolors = true
 vim.cmd.colorscheme('tokyonight')
 
+-- Shell
+vim.o.shell = "pwsh"
 
 -- Open compiler
 vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
@@ -27,4 +30,3 @@ vim.api.nvim_set_keymap('n', '<S-F6>',
 
 -- Toggle compiler results
 vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
-

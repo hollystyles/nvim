@@ -1,9 +1,12 @@
 -- lazy.nvim
 return {
   "GustavEikaas/easy-dotnet.nvim",
+  -- branch = "feat/razor-support",
   -- 'nvim-telescope/telescope.nvim' or 'ibhagwan/fzf-lua' or 'folke/snacks.nvim'
   -- are highly recommended for a better experience
   dependencies = { "nvim-lua/plenary.nvim", 'nvim-telescope/telescope.nvim', },
+  -- lazy = true,
+  -- ft = {"cs","cshtml","csproj","sln","slnx"},
   config = function()
     local function get_secret_path(secret_guid)
       local path = ""
